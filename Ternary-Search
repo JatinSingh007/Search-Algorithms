@@ -1,0 +1,18 @@
+def tern_search(l,r,z,la):
+
+
+    while r>=l:
+        mid1 = l+(r-l)//3
+        mid2 = r-(r-l)//3
+        if la[mid1] == z:
+            return mid1
+        if la[mid2] == z:
+            return mid2
+        if la[mid1]>z:
+            mid2 = mid1-1
+        elif z>la[mid2]:
+            mid1 = mid2+1
+
+        else:
+            mid1+=1
+            mid2-=1
